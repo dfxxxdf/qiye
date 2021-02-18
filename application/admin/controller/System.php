@@ -3,8 +3,8 @@
 namespace app\admin\controller;
 use app\admin\common\Base;
 use think\Request;
-//轮播列表功能
-class Banner extends Base {
+//系统设置功能
+class System extends Base{
     /**
      * 显示资源列表
      *
@@ -12,7 +12,7 @@ class Banner extends Base {
      */
     public function index(){
         //
-        return $this->view->fetch('banner_list');
+      return $this->view->fetch('sys_set');
     }
 
     /**

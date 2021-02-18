@@ -1,10 +1,12 @@
 <?php
 
 namespace app\admin\controller;
+
 use app\admin\common\Base;
 use think\Request;
-//轮播列表功能
-class Banner extends Base {
+//分类列表功能
+class Category extends Base
+{
     /**
      * 显示资源列表
      *
@@ -12,7 +14,7 @@ class Banner extends Base {
      */
     public function index(){
         //
-        return $this->view->fetch('banner_list');
+      return $this->view->fetch('category_list');
     }
 
     /**

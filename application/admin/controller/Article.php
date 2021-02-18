@@ -3,7 +3,7 @@
 namespace app\admin\controller;
 use app\admin\common\Base;
 use think\Request;
-
+//资讯列表功能
 class Article extends Base{
     /**
      * 显示资源列表

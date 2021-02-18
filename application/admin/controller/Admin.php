@@ -3,18 +3,21 @@
 namespace app\admin\controller;
 use app\admin\common\Base;
 use think\Request;
-//轮播列表功能
-class Banner extends Base {
+use app\admin\model\Admin as AdminModel;
+//管理员列表功能
+class Admin extends Base{
     /**
      * 显示资源列表
      *
      * @return \think\Response
      */
     public function index(){
-        //
-        return $this->view->fetch('banner_list');
+      //1、读取admin管理员的数据库表信息
+      $admin = AdminModel::get(['username'=>'admin']);
+      //2、将当前管理员的信息赋值给模板
+      $this->view->assign('admin',$admin);
+      return $this->view->fetch('admin_list');
     }
-
     /**
      * 显示创建资源表单页.
      *
@@ -48,14 +51,11 @@ class Banner extends Base {
     }
 
     /**
-     * 显示编辑资源表单页.
-     *
-     * @param  int  $id
-     * @return \think\Response
+     * 渲染编辑模板
+     * 要用到新的模板
      */
-    public function edit($id)
-    {
-        //
+    public function edit(){
+        return $this->view->fetch('admin_edit');
     }
 
     /**

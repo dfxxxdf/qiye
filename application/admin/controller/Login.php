@@ -42,7 +42,7 @@ class Login extends Base{
         $admin->save(['last_time'=>time()]);//住数据库里存入最后登录时间
         //将用户登录的信息保存session中，供其它控制器进行录判断
         Session::set('user_id',$userName);
-        Session::set('user_info',$data);
+        Session::set('user_info',$admin->toArray());
       }
       //把验证结果返回到前端
       return ['status'=>$status, 'message'=>$message];
